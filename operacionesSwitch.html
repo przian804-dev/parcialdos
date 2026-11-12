@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let opcion = parseInt(prompt(
+            "¿Qué operación deseas realizar?" +
+            "\n1. Suma " +
+            "\n2. Resta " +
+            "\n3. Multiplicación " +
+            "\n4. División"
+        ));
+        let n1 = parseFloat(prompt("Ingresa el primer número:"));
+        let n2 = parseFloat(prompt("Ingresa el segundo número:"));
+        let resultado;
+        switch(opcion){
+            case 1:
+                resultado = n1 + n2;
+                alert("La suma es: " + resultado);
+                break;
+            case 2:
+                resultado = n1 - n2;
+                alert("La resta es: " + resultado);
+                break;
+            case 3:
+                resultado = n1 * n2;
+                alert("La multiplicación es: " + resultado);
+                break;
+            case 4:
+                if (n2 != 0){
+                    resultado = n1 / n2;
+                    alert("La división es: " + resultado);
+                } else{
+                    alert("No se puede dividir entre cero");
+                }
+                break;
+            default:
+                alert("Opción no válida");
+                break;
+        }
+    </script>
+</body>
+</html>

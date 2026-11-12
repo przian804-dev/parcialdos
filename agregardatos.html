@@ -1,0 +1,21 @@
+<script>
+        const continuar=confirm('¿Desea registrar tus datos?');
+        if(continuar){
+
+            let nombre=prompt('Escribe tu nombre');
+            let espe=prompt('Escribe tu especialidad');
+            let edad=prompt('Escribe tu edad');
+            let direccion=prompt('Escribe tu direccion');
+            let email=prompt('Escribe tu correo electronico');
+
+            alert("Tu nombre es: " + nombre + "\nTu especialidad es: "
+                + espe + "\nTienes: " + edad + " años" + 
+                "\nTu direccion es: " + direccion + "\nTu correo es: "
+                + email
+            )
+
+        }
+        else{
+            alert('Tengo flojera');
+        }
+    </script>
