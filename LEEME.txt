@@ -3,11 +3,11 @@ ENGLISH V - SITIO WEB
 INSTRUCCIONES
 1. Extrae toda la carpeta del ZIP.
 2. Mantén todos los HTML, adorno.css, imágenes, audios y videos juntos en la misma carpeta.
-3. Abre index.html en tu navegador.
+3. Abre paginaInglesVC.html en tu navegador.
 4. No cambies los nombres de los archivos multimedia: los HTML usan las rutas originales.
 
 ARCHIVOS HTML INCLUIDOS
-index.html, PresenteS.html, PasadoS.html, FuturoS.html, AdFrecuencia.html, ZeroC.html, FirstC.html, Musica.html, cali.html y gracias.html.
+paginaInglesVC.html, PresenteS.html, PasadoS.html, FuturoS.html, AdFrecuencia.html, ZeroC.html, FirstC.html, Musica.html, cali.html y gracias.html.
 
 El formulario funciona con HTML y JavaScript y muestra los datos en gracias.html; no necesita PHP ni base de datos.
 
