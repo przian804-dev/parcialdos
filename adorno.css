@@ -138,3 +138,64 @@ textarea { resize: vertical; }
  .lesson-card { padding: 19px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+
+/* ==============================
+   AJUSTE DE IMÁGENES
+   Evita recortes, deformaciones y tamaños desiguales.
+   ============================== */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.home-visual img {
+  width: min(100%, 370px);
+  height: 370px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  padding: 10px;
+  background: #0c0d10;
+  border-radius: 24px;
+}
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 245px;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  padding: 10px;
+  background: #0c0d10;
+  border-radius: 18px;
+}
+.music-card > img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  padding: 12px;
+  background: #0c0d10;
+}
+.thanks-card > img {
+  display: block;
+  width: min(260px, 70%);
+  height: 260px;
+  max-height: none;
+  object-fit: contain;
+  margin: 20px auto;
+}
+@media (max-width: 650px) {
+  .home-visual img {
+    width: min(100%, 300px);
+    height: 300px;
+  }
+  .hero-image {
+    width: min(100%, 300px);
+    height: 220px;
+    justify-self: center;
+  }
+  .music-card > img {
+    height: 210px;
+  }
+}
