@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101114">
+  <title>Gracias | English V</title>
+  <link rel="stylesheet" href="adorno.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">EV</span><span>ENGLISH <b>V</b></span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul>            <li><a href="index.html">Inicio</a></li>
+            <li><a href="PresenteS.html">Presente Simple</a></li>
+            <li><a href="PasadoS.html">Pasado Simple</a></li>
+            <li><a href="FuturoS.html">Futuro Simple</a></li>
+            <li><a href="AdFrecuencia.html">Adverbios</a></li>
+            <li><a href="ZeroC.html">Zero Conditional</a></li>
+            <li><a href="FirstC.html">First Conditional</a></li>
+            <li><a href="Musica.html">Música</a></li>
+            <li><a href="cali.html">Califica</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="container thanks-page"><section class="thanks-card"><span class="eyebrow">ENGLISH V</span><h1>¡Gracias por contestar!</h1><img src="gracias.png" alt="Imagen de agradecimiento"><p id="thanksMessage">Gracias por visitar nuestra página.</p><div id="responseData" class="response-data" aria-live="polite"></div><a class="button" href="index.html">Regresar a la página inicial</a></section></main>
+<script>
+const params = new URLSearchParams(window.location.search);
+const nombre = params.get('nombre');
+const apellidos = params.get('apellidos');
+const edad = params.get('edad');
+const calificacion = params.get('calificacion');
+const comentario = params.get('comentario');
+const message = document.getElementById('thanksMessage');
+const data = document.getElementById('responseData');
+if (nombre && apellidos && edad && calificacion) {
+  message.textContent = '¡Gracias, ' + nombre + '! Tu respuesta fue recibida en esta página.';
+  const rows = [['Nombre', nombre], ['Apellidos', apellidos], ['Edad', edad], ['Calificación', calificacion + ' / 10']];
+  if (comentario) rows.push(['Comentario', comentario]);
+  rows.forEach(([label, value]) => {
+    const p = document.createElement('p');
+    const strong = document.createElement('strong');
+    strong.textContent = label + ': ';
+    p.append(strong, document.createTextNode(value));
+    data.appendChild(p);
+  });
+} else {
+  message.textContent = 'Gracias por visitar nuestra página. Si quieres calificarla, puedes completar el formulario.';
+}
+</script>
+<footer class="site-footer"><p>English V · Aprende inglés paso a paso</p><a href="index.html">Volver al inicio ↑</a></footer>
+</body>
+</html>

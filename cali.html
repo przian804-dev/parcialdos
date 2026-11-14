@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101114">
+  <title>Califica la página | English V</title>
+  <link rel="stylesheet" href="adorno.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">EV</span><span>ENGLISH <b>V</b></span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul>            <li><a href="index.html">Inicio</a></li>
+            <li><a href="PresenteS.html">Presente Simple</a></li>
+            <li><a href="PasadoS.html">Pasado Simple</a></li>
+            <li><a href="FuturoS.html">Futuro Simple</a></li>
+            <li><a href="AdFrecuencia.html">Adverbios</a></li>
+            <li><a href="ZeroC.html">Zero Conditional</a></li>
+            <li><a href="FirstC.html">First Conditional</a></li>
+            <li><a href="Musica.html">Música</a></li>
+            <li><a href="cali.html" aria-current="page">Califica</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="container form-page">
+<section class="page-hero compact-hero"><div class="hero-copy"><span class="eyebrow">TU OPINIÓN CUENTA</span><h1>Califica la página</h1><p>Completa el formulario para compartir tu opinión sobre English V.</p></div><div class="hero-symbol">✦</div></section>
+<section class="form-card"><form id="ratingForm" action="gracias.html" method="get">
+<div class="field-grid">
+<div class="form-field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="given-name" required maxlength="60" placeholder="Escribe tu nombre"></div>
+<div class="form-field"><label for="apellidos">Apellidos</label><input id="apellidos" name="apellidos" type="text" autocomplete="family-name" required maxlength="80" placeholder="Escribe tus apellidos"></div>
+<div class="form-field"><label for="edad">Edad</label><input id="edad" name="edad" type="number" min="1" max="120" required placeholder="Tu edad"></div>
+<div class="form-field"><label for="calificacion">Califica la página</label><select id="calificacion" name="calificacion" required><option value="">Elige una calificación</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></div>
+</div>
+<div class="form-field"><label for="comentario">Comentario (opcional)</label><textarea id="comentario" name="comentario" rows="4" maxlength="500" placeholder="¿Qué te pareció la página?"></textarea></div>
+<p class="form-note">Los campos marcados como obligatorios deben completarse antes de enviar.</p>
+<div class="form-actions"><button class="button" type="submit">Enviar calificación →</button><a class="text-link" href="index.html">Regresar al inicio</a></div>
+<p id="formError" class="form-error" role="alert" aria-live="polite"></p>
+</form></section></main>
+<script>
+document.getElementById('ratingForm').addEventListener('submit', function (event) {
+  const edad = Number(document.getElementById('edad').value);
+  const error = document.getElementById('formError');
+  if (!this.checkValidity() || !Number.isInteger(edad) || edad < 1 || edad > 120) {
+    event.preventDefault();
+    error.textContent = 'Revisa los campos: completa la información y escribe una edad válida entre 1 y 120.';
+    alert('No se pudo enviar. Revisa los campos del formulario.');
+    this.reportValidity();
+    return;
+  }
+  error.textContent = '';
+  alert('¡Formulario enviado correctamente!');
+});
+</script>
+<footer class="site-footer"><p>English V · Aprende inglés paso a paso</p><a href="index.html">Volver al inicio ↑</a></footer>
+</body>
+</html>
